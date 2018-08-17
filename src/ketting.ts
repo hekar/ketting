@@ -171,9 +171,6 @@ export default class Ketting {
 
     const request = fetchHelper.createFetchRequest(input, init, this.fetchInit);
 
-    if (!request.headers.has('User-Agent')) {
-      request.headers.set('User-Agent', 'Ketting/' + require('../package.json').version);
-    }
     if (!request.headers.has('Accept')) {
       const accept = this.contentTypes
         .map( contentType => {
